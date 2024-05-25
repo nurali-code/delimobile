@@ -3,15 +3,16 @@
 
 main
     height: calc( 100vh - 60px )
-    min-height: 680px
+    min-height: 780px
     max-height: 1080px
     background-image: url('../img/main.jpg')
     background-repeat: no-repeat
-    background-position: bottom center
+    background-position: center center
     background-size: 1900px auto
     padding: 5vw 0 2.5vw
     position: relative
     z-index: 1
+    margin: auto 0
 
     display: flex
     justify-content: space-between
@@ -44,20 +45,36 @@ main
 
     @media screen and ( max-width: 1500px )
         background-size: 1440px auto
+        max-height: 900px
+        min-height: 680px
+        background-position: bottom center
         padding: 3vw 0 2.5vw
 
         .logo
             img
-                max-width: 18vw
+                max-width: 20vw
 
         .code
             top: 44%
             font-size: 30px
 
         h1
-            font-size: 20px
+            font-size: 18px
+
+    @media screen and ( max-width: 1000px )
+        height: unset
+        background-size: 1540px auto
+        // background-position: center center
+
+        .logo
+            img 
+                max-width: 360px
+
+        .code
+            left: 32%
 
 .item
+    width: 100%
     max-width: 655px
     margin: 0 auto
     padding: 33px 12px 15px
@@ -66,7 +83,7 @@ main
     box-shadow: 0px 30px 80px 0px #00000033
     .fx
         font-size: 20px
-        line-height: 25.36px
+        line-height: 130%
         padding: 16px 28px
         background: #FFFFFF
         gap: 33px
@@ -85,8 +102,20 @@ main
         text-align: center
         font-size: 16px
         font-weight: 300
-        color: rgba(0, 0, 0, .1)
+        color: rgba(0, 0, 0, .15)
         span
             color: $prime
+
+    @media screen and ( max-width: 1500px )
+        max-width: 590px
+        .fx
+            font-size: 18px
+            gap: 20px
+            padding: 16px 20px
+            img
+                width: 55px
+
+        mark
+            padding: 1px 4px 2px
 
 @import 'footer'
