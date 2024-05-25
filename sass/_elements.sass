@@ -1,0 +1,62 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+$prime: #28E1B9
+$second: #000
+
+html
+    scroll-behavior: smooth
+
+body
+    min-height: 100vh
+    color: #000
+    background-color: #F8F8F8
+    font-family: 'Euclid Circular A', sans-serif
+    display: flex
+    flex-direction: column
+
+img
+    max-width: 100%
+
+a,
+button
+    display: inline-block
+    text-decoration: none
+    transition: all ease .2s
+    background-color: transparent
+    &:active
+        transform: scale(.98)
+
+    img
+        display: block
+
+strong
+    font-weight: 600
+
+mark 
+    background-color: $prime
+    color: #000
+    display: inline-block
+    padding: 2px 8px 4px
+
+.btn
+    font-size: 24px
+    line-height: 30.43px
+    font-weight: 600
+
+    display: block
+    border-radius: 10px
+    color: #000
+    background-color: $prime
+    padding: 25px 100px
+
+.fx, .fxb
+    display: flex
+    align-items: center
+
+.fxb
+    justify-content: space-between

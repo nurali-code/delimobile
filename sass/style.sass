@@ -1,0 +1,92 @@
+@import 'normolize'
+@import 'elements'
+
+main
+    height: calc( 100vh - 60px )
+    min-height: 680px
+    max-height: 1080px
+    background-image: url('../img/main.jpg')
+    background-repeat: no-repeat
+    background-position: bottom center
+    background-size: 1900px auto
+    padding: 5vw 0 2.5vw
+    position: relative
+    z-index: 1
+
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    .logo
+        margin: 0 auto
+        text-align: center
+        img
+            margin: 0 auto
+            max-width: 27.6vw
+            display: block
+
+    h1
+        font-size: 24px
+        font-weight: 500
+
+    .code
+        // background-color: $prime 
+        background-image: url('../img/code_bg.svg')
+        background-repeat: no-repeat
+        background-size: cover
+        color: #000
+        font-size: 40px
+        font-weight: 700
+        padding: 5px 40px
+        position: absolute
+        top: 47%
+        left: 40%
+        transform: translate(-50%, -50%) rotate(-4.8deg)
+
+    @media screen and ( max-width: 1500px )
+        background-size: 1440px auto
+        padding: 3vw 0 2.5vw
+
+        .logo
+            img
+                max-width: 18vw
+
+        .code
+            top: 44%
+            font-size: 30px
+
+        h1
+            font-size: 20px
+
+.item
+    max-width: 655px
+    margin: 0 auto
+    padding: 33px 12px 15px
+    background: #FAFAFA
+    border-radius: 20px
+    box-shadow: 0px 30px 80px 0px #00000033
+    .fx
+        font-size: 20px
+        line-height: 25.36px
+        padding: 16px 28px
+        background: #FFFFFF
+        gap: 33px
+        border-radius: 15px
+        box-shadow: 0px 0px 20px 0px #00BE9C1A
+        margin: 0 0 13px
+
+    mark
+        padding: 1px 5px 2px
+
+    .btn
+        width: 100%
+        margin-bottom: 8px
+
+    .copied
+        text-align: center
+        font-size: 16px
+        font-weight: 300
+        color: rgba(0, 0, 0, .1)
+        span
+            color: $prime
+
+@import 'footer'
