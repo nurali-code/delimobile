@@ -52,7 +52,44 @@ mark
     border-radius: 10px
     color: #000
     background-color: $prime
-    padding: 25px 
+    padding: 25px
+    position: relative
+    z-index: 1
+    overflow: hidden
+    transition: .3s ease all
+    &::before,
+    &::after
+        content: 'скопировано'
+        position: absolute
+        top: 120%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: -1
+        color: #000
+        transition: .7s ease all
+        overflow: hidden
+        opacity: 0
+    &::after
+        content: ''
+        transition: 1s ease all
+        opacity: 1
+        width: 100%
+        height: 600px
+        top: 50%
+        border-radius: 50%
+        transform: translate(-50%, -0%) scale(0)
+        background-color: #d2f5ed
+        z-index: -1111
+
+    &[disabled]
+        background-color: transparent
+        pointer-events: none
+        color: transparent
+        &::before
+            top: 50%
+            opacity: 1
+        &::after
+            transform: translate(-50%, -50%) scale(1)
 
 .fx, .fxb
     display: flex
@@ -64,11 +101,11 @@ mark
 @media screen and ( max-width: 1500px )
     .btn
         font-size: 22px
-        padding: 18px 
+        padding: 18px
 
 @media screen and ( max-width: 700px )
-    mark 
+    mark
         padding: 2px 4px 3px
-    .btn 
+    .btn
         font-size: 20px
         padding: 22px

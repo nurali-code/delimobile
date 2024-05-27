@@ -83,6 +83,10 @@ main
         padding: 13.4vw 15px 10vw
         height: calc( 100vh - 50px )
         min-height: 640px
+        background-image: url('../img/main_mob.jpg')
+        background-size: contain
+        background-position: center center
+
         .logo
             img
                 width: 62.1vw
@@ -91,8 +95,8 @@ main
             font-size: 15px
 
         .code
-            bottom: 45
-            // transform:
+            bottom: 43%
+            left: 28%
             font-size: 28px
             padding: 2px 20px
 
@@ -104,6 +108,7 @@ main
     position: relative
     z-index: 1
     &::before
+        pointer-events: none
         content: ''
         display: block
         width: 100%
@@ -117,9 +122,10 @@ main
         box-shadow: 0px 30px 80px 0px #00000033
 
     &::after
+        pointer-events: none
         content: ''
         display: block
-        width: 70%
+        width: 100%
         height: 100%
         background-repeat: no-repeat
         background-position: top left

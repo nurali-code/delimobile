@@ -19,7 +19,7 @@
             <h1>каршеринг для твоих <mark>достижений</mark></h1>
         </div>
         <!-- <img src="img/map.png" class="map" alt="main"> -->
-        <button class="code">REFGS72H</button>
+        <p class="code" id="qrCodeText">REFGS72H</p>
         <div class="item">
             <p class="fx">
                 <img src="img/pin.svg" alt="pin">
@@ -28,11 +28,23 @@
                     <strong>Дарим промокод на 5 000 бонусных рублей!</strong>
                 </span>
             </p>
-            <button class="btn">скопировать</button>
+            <button class="btn" id="qrBtn">скопировать</button>
             <p class="copied">скопировали <span id="amount">3325</span> раз</p>
         </div>
     </main>
     <footer><img src="img/contur.svg" alt="Делимобиль" title="Делимобиль"></footer>
+
+    <script src="code.js"></script>
+    <script>
+        const qrBtn = document.getElementById('qrBtn');
+        document.getElementById('qrCodeText').innerText = qrCode;
+        qrBtn.onclick = (e) => {
+            e.target.disabled = true;
+            navigator.clipboard.writeText(qrCode)
+                .then(function () { setTimeout(() => { e.target.disabled = false; }, 3000) })
+                .catch(function (err) { console.error('Failed to copy text:', err); });
+        }
+    </script>
 </body>
 
 </html>
