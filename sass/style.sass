@@ -15,6 +15,7 @@ main
     margin: auto 0
 
     display: flex
+    align-items: center
     justify-content: space-between
     flex-direction: column
     .logo
@@ -52,6 +53,9 @@ main
             background-color: $prime
             clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0% 100%)
 
+    &.third
+        padding-bottom: 30px
+
     @media screen and ( max-width: 1500px )
         background-size: 1440px auto
         max-height: 900px
@@ -66,10 +70,16 @@ main
         h1
             font-size: 18px
 
+        &.third
+            min-height: 710px
+
     @media screen and ( max-width: 1000px )
         height: unset
         min-height: 840px
         background-size: 1640px auto
+
+        &.third
+            min-height: 840px
 
         .logo
             img
@@ -103,7 +113,7 @@ main
 .item
     width: 100%
     max-width: 655px
-    margin: 0 auto
+    margin: auto auto 0
     padding: 33px 12px 15px
     position: relative
     z-index: 1
@@ -199,5 +209,51 @@ main
 
         &::after
             top: -95px
+
+.poster
+
+.poster
+    padding: 0 15px 40px
+    position: relative
+
+    z-index: 1
+    &__img
+        position: absolute
+        bottom: 0
+        left: 0
+        pointer-events: none
+.post
+    background-color: #000
+    box-shadow: 0px 30px 80px 0px #00000033
+    border-radius: 20px
+    padding: 24px 20px
+    position: relative
+    z-index: 1
+    max-width: 500px
+    margin: 0 auto
+    &__tag
+        display: inline-block
+        background-color: $prime
+        color: #000
+        border-radius: 10px
+        padding: 2px 9px 5px
+
+    &__heading
+        color: white
+        max-width: 60%
+        font-size: 24px
+        line-height: 24px
+        margin: 10px 0 20px
+
+    &__img
+        position: absolute
+        bottom: 0
+        right: 0
+        border-radius: 0 0 20px 0
+        height: 120%
+        max-width: 33%
+        object-fit: contain
+        pointer-events: none
+        object-position: bottom right
 
 @import 'footer'

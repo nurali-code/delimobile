@@ -3,28 +3,27 @@ const qrAmount = document.getElementById('amount');
 
 document.getElementById('qrCodeText').innerText = qrCode;
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    fetch('get_copy_count.php')
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) { qrAmount.innerText = data.copyCount; }
-            else { console.error('Failed to load copy count:', data.message); }
-        })
-        .catch(error => { console.error('Error:', error); });
-});
-
 qrBtn.onclick = (e) => {
     e.target.disabled = true;
     navigator.clipboard.writeText(qrCode)
         .then(function () {
-            updateCopyCount();
             setTimeout(() => { e.target.disabled = false; }, 3000);
+            updateCopyCount();
         })
         .catch(function (err) {
             console.error('Failed to copy text:', err);
             e.target.disabled = false;
         });
 };
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    fetch('get_copy_count.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) { qrAmount.innerText = data.copyCount; }
+            else { console.error('Failed to load copy count:', data.message); }
+        }).catch(error => { console.error('Error:', error); });
+});
 
 function updateCopyCount() {
     fetch('update_copy_count.php', {

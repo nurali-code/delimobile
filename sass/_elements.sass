@@ -69,6 +69,7 @@ mark
         transition: .7s ease all
         overflow: hidden
         opacity: 0
+
     &::after
         content: ''
         transition: 1s ease all
@@ -91,12 +92,32 @@ mark
         &::after
             transform: translate(-50%, -50%) scale(1)
 
+    &__white
+        font-weight: 600
+        display: inline-flex !important
+        border-radius: 10px
+        background-color: #fff
+        padding: 15px 42px
+        color: #000
+        gap: 10px
+        line-height: 120%
+
+
 .fx, .fxb
     display: flex
     align-items: center
 
 .fxb
     justify-content: space-between
+
+.link 
+    width: max-content
+    display: inline-block
+    color: #28E1B9
+    text-align: center
+    margin-top: 12px
+    padding: 2px 0 
+    border-bottom: 1px dashed #28E1B9
 
 @media screen and ( max-width: 1500px )
     .btn
