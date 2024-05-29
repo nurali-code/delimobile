@@ -53,9 +53,6 @@ main
             background-color: $prime
             clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0% 100%)
 
-    &.third
-        padding-bottom: 30px
-
     @media screen and ( max-width: 1500px )
         background-size: 1440px auto
         max-height: 900px
@@ -69,9 +66,6 @@ main
 
         h1
             font-size: 18px
-
-        &.third
-            min-height: 710px
 
     @media screen and ( max-width: 1000px )
         height: unset
@@ -90,12 +84,12 @@ main
             bottom: 43%
 
     @media screen and ( max-width: 700px )
-        padding: 13vw 15px 10vw
+        padding: 8vw 15px 10vw
         height: unset
         min-height: 202vw
         background-image: url('../img/main_mob.jpg')
         background-size: contain
-        background-position: top 33vw center
+        background-position: top 28vw center
 
         .logo
             img
@@ -109,6 +103,14 @@ main
             left: 28%
             font-size: 28px
             padding: 2px 20px
+
+.third 
+    text-align: center
+    padding-bottom: 10px
+    position: relative
+    top: -16px
+    z-index: 1
+    opacity: .9
 
 .item
     width: 100%
