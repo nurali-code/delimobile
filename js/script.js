@@ -57,7 +57,6 @@ function updateCopyCount(userStat) {
             if (data.success) {
                 qrAmount.innerText = data.demonstration;
                 promocodeBadge.innerText = data.promocode;
-                console.log(data);
             }
             else { console.error('Failed to update copy count:', data); }
         })
