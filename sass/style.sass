@@ -39,8 +39,14 @@ main
         position: absolute
         bottom: 44%
         left: 37%
-        transform: translate(-50%, -50%) rotate(-4.8deg)
         filter: drop-shadow(0px 0px 35px #28E1B980)
+        transition: .4s all ease
+        opacity: 0
+        transform: translate(-50%, 10%) rotate(-4.8deg)
+        &.acive
+            opacity: 1
+            transform: translate(-50%, -50%) rotate(-4.8deg
+
         &::before
             content: ''
             display: block
@@ -104,7 +110,7 @@ main
             font-size: 28px
             padding: 2px 20px
 
-.third 
+.third
     text-align: center
     padding-bottom: 10px
     position: relative
@@ -257,5 +263,23 @@ main
         object-fit: contain
         pointer-events: none
         object-position: bottom right
+
+@keyframes fadeUp
+    0%
+        transform: translate(-50%, 10%) rotate(-4.8deg)
+        opacity: 0
+
+    100%
+        opacity: 1
+        transform: translate(-50%, -50%) rotate(-4.8deg)
+
+@keyframes fadeDown
+    0%
+        opacity: 1
+        transform: translate(-50%, -50%) rotate(-4.8deg)
+
+    100%
+        transform: translate(-50%, 10%) rotate(-4.8deg)
+        opacity: 0
 
 @import 'footer'

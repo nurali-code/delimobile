@@ -13,7 +13,10 @@ try {
         $jsonData = file_get_contents($jsonFile);
         $data = json_decode($jsonData, true);
         $response['success'] = true;
-        $response['copyCount'] = $data['count'];
+        $response['demonstration'] = $data['demonstration'];
+        $response['main_count'] = $data['main_count'];
+        $response['copyCount'] = $data['copyCount'];
+        $response['promocode'] = $data['promocode'];
     } else {
         $response['message'] = 'JSON file not found';
     }
